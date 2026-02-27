@@ -1,65 +1,167 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PostAJob</title>
-    <link rel="stylesheet" href="post.css">
+    <title>Post A Job - TallentSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
 
-    <nav>
-        <div class="left">
-            <p>TallentSync</p>
-        </div>
-        <div class="right">
-            <a href="../index.html">Home</a>
-            <a href="../AboutUs/about.html">About</a>
-            <a href="./contact.html">contact</a>
-            <div class="btns">
-                <a href="../PostAJob/post.html"><button id="post">Post a Job</button></a>
-                <a href="../index.html#Categories"><button id="Want">Want a Job</button></a>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                        TS
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-slate-800">Tallent<span
+                            class="text-blue-600">Sync</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html"
+                        class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="../AboutUs/about.html"
+                        class="text-slate-600 hover:text-blue-600 font-medium transition-colors">About Us</a>
+                    <a href="../ContactUs/contact.html"
+                        class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html#Categories"
+                        class="text-slate-600 hover:text-blue-600 font-medium px-4 py-2 transition-colors">Want a
+                        Job?</a>
+                    <a href="./post.html"
+                        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md">Post
+                        a Job</a>
+                </div>
             </div>
         </div>
     </nav>
-    <h1 id="heading">Post a Job</h1>
-    <form action="#" class="form">
-        
-        <label class="lbl" for="fullname">Job Title</label>
-        <input type="text" id="fullname" class="form-control" placeholder="eg. Professional UI/UX Designer">
 
-        <label class="lbl" for="fullname">Company</label>
-        <input type="text" id="fullname" class="form-control" placeholder="eg. Facebook, Inc.">
+    <!-- Header -->
+    <section class="pt-32 pb-16 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-extrabold mb-4">Post a Job</h1>
+            <p class="text-xl text-blue-100">Find the perfect candidate for your team today.</p>
+        </div>
+    </section>
 
-        <h3>Job Type</h3>
-        <label for="option-job-type-1" class="option">
-        <input type="radio" id="option-job-type-1" name="job-type"> Full Time
-        </label>
-        
-        <label for="option-job-type-2" class="option">
-        <input type="radio" id="option-job-type-2" name="job-type"> Part Time
-        </label>
+    <!-- Content Section -->
+    <section class="py-20 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden p-8 md:p-12 border border-slate-100">
+                <form class="space-y-8" onsubmit="event.preventDefault(); alert('Job Posted Successfully!');">
 
-        <label for="option-job-type-3" class="option">
-        <input type="radio" id="option-job-type-3" name="job-type"> Freelance
-        </label>
+                    <!-- Job Title -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Job Title</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400"
+                            placeholder="e.g. Senior Frontend Developer" required>
+                    </div>
 
-        <label for="option-job-type-4" class="option">
-        <input type="radio" id="option-job-type-4" name="job-type"> Internship
-        </label>
+                    <!-- Company Name -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Company Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400"
+                            placeholder="e.g. Google, Apple, StartupX" required>
+                    </div>
 
-        <label for="option-job-type-4" class="option">
-        <input type="radio" id="option-job-type-4" name="job-type"> Termporary
-        </label>
+                    <!-- Job Type Selection -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-4">Job Type</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="job-type" class="peer sr-only" checked>
+                                <div
+                                    class="w-full text-center px-4 py-3 rounded-xl border-2 border-slate-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 font-medium text-slate-600 transition-all">
+                                    Full Time
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="job-type" class="peer sr-only">
+                                <div
+                                    class="w-full text-center px-4 py-3 rounded-xl border-2 border-slate-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 font-medium text-slate-600 transition-all">
+                                    Part Time
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="job-type" class="peer sr-only">
+                                <div
+                                    class="w-full text-center px-4 py-3 rounded-xl border-2 border-slate-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 font-medium text-slate-600 transition-all">
+                                    Freelance
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="job-type" class="peer sr-only">
+                                <div
+                                    class="w-full text-center px-4 py-3 rounded-xl border-2 border-slate-200 peer-checked:border-blue-500 peer-checked:bg-blue-50 peer-checked:text-blue-700 font-medium text-slate-600 transition-all">
+                                    Internship
+                                </div>
+                            </label>
+                        </div>
+                    </div>
 
-        <h3>Location</h3>
-        <input type="text" class="form-control" placeholder="Western City, UK">
+                    <!-- Location -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Location</label>
+                        <input type="text"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all placeholder:text-slate-400"
+                            placeholder="e.g. Remote, San Francisco, London" required>
+                    </div>
 
-        <h3>Job Description</h3>
-        <textarea name="" class="form-message" id="" cols="30" rows="5"></textarea>
+                    <!-- Job Description -->
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Job Description</label>
+                        <textarea rows="6"
+                            class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all resize-none placeholder:text-slate-400"
+                            placeholder="Describe the responsibilities, requirements, and benefits..."
+                            required></textarea>
+                    </div>
 
-        <input type="submit" value="Post" class="send">
+                    <div class="pt-4 border-t border-slate-100">
+                        <button type="submit"
+                            class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-lg py-4 rounded-xl shadow-xl shadow-slate-900/20 transition-all active:scale-95 flex justify-center items-center gap-2">
+                            <i data-lucide="check-circle" class="w-5 h-5"></i> Publish Job Post
+                        </button>
+                        <p class="text-center text-sm text-slate-500 mt-4">By posting, you agree to our Terms of
+                            Service.</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 
-    </form>
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 TallentSync. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
 </body>
+
 </html>

@@ -1,31 +1,137 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="about.css">
+    <title>About Us - TallentSync</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn-primary {
+                @apply bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 cursor-pointer;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body>
-    <nav>
-        <div class="left">
-            <p>TallentSync</p>
-        </div>
-        <div class="right">
-            <a href="../index.html">Home</a>
-            <a href="./about.html">About</a>
-            <a href="../ContactUs/contact.html">contact</a>
-            <div class="btns">
-                <a href="../PostAJob/post.html"><button id="post">Post a Job</button></a>
-                <a href="../index.html#Categories"><button id="Want">Want a Job</button></a>
+
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md bg-white/70 border-b border-white/20 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer group">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-blue-500/30 transition-shadow">
+                        TS
+                    </div>
+                    <span class="font-bold text-2xl tracking-tight text-slate-800">Tallent<span
+                            class="text-blue-600">Sync</span></span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="../index.html"
+                        class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="./about.html" class="text-blue-600 font-medium transition-colors">About Us</a>
+                    <a href="../ContactUs/contact.html"
+                        class="text-slate-600 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="../index.html#Categories"
+                        class="text-slate-600 hover:text-blue-600 font-medium px-4 py-2 transition-colors">Want a
+                        Job?</a>
+                    <a href="../PostAJob/post.html"
+                        class="bg-slate-900 hover:bg-slate-800 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">Post
+                        a Job</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-slate-600 hover:text-blue-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
-    <section id="about">
-        <h1 id="heading">About Us</h1>
-        <img src="../assets/computer.png" alt="">
-        <h1 class="welcome">Welcome to TallentSync</h1>
-        <p>sdfghdf</p>
+
+    <!-- Header -->
+    <section class="pt-32 pb-16 bg-blue-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-5xl font-extrabold mb-4">About Us</h1>
+            <p class="text-xl text-blue-100">Connecting ambition with opportunity worldwide.</p>
+        </div>
     </section>
+
+    <!-- Content Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <!-- Image -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-100 rounded-3xl transform rotate-3 scale-105 -z-10"></div>
+                    <img src="../assets/computer.png" alt="About TallentSync"
+                        class="w-full rounded-2xl shadow-xl border border-slate-100 object-cover bg-white">
+                </div>
+
+                <!-- Text -->
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-6">Welcome to TallentSync</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                        At TallentSync, we believe that finding the right job or the perfect candidate shouldn't be a
+                        tedious process. We are bridging the gap between brilliant talents and world-class companies
+                        through an intuitive and modern platform.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Our mission is to simplify the hiring lifecycle for everyone. From automated job matching to
+                        seamless application processes, TallentSync leverages the latest technologies to make career
+                        transitions smooth and efficient.
+                    </p>
+
+                    <div class="flex space-x-8">
+                        <div>
+                            <p class="text-4xl font-bold text-blue-600">20k+</p>
+                            <p class="text-sm text-slate-500 font-medium">Active Jobs</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-indigo-600">5k+</p>
+                            <p class="text-sm text-slate-500 font-medium">Companies</p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-emerald-600">2M+</p>
+                            <p class="text-sm text-slate-500 font-medium">Candidates</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2026 TallentSync. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
 </body>
+
 </html>
